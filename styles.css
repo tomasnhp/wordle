@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    margin-top: 20px;
+    color: #0073e6;
+}
+
+p {
+    font-size: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-gap: 10px;
+    margin: 20px auto;
+    max-width: 350px;
+}
+
+.grid-container div {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    font-size: 24px;
+    transition: background-color 0.3s, color 0.3s;
+    transform: scale(1);
+}
+
+.grid-container div.correct {
+    background-color: #8BC34A;
+    color: #fff;
+}
+
+.grid-container div.incorrect {
+    background-color: #FFEBEE;
+    color: #FF5722;
+}
+
+.grid-container div.partial {
+    background-color: #FFD54F;
+    color: #000;
+}
+
+#guess-input {
+    font-size: 24px;
+    padding: 5px;
+}
+
+#guess-button {
+    font-size: 20px;
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#guess-button:hover {
+    background-color: #0059b3;
+}
+
+#guess-input:focus + #guess-button {
+    background-color: #0059b3;
+}
+
+.grid-container div.incorrect {
+    background-color: #FFEBEE;
+    color: #FF5722;
+}
+
+.grid-container div.partial {
+    background-color: #FFD54F;
+    color: #000;
+    animation: shake 0.4s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+.correct {
+    transition: background-color 0.5s;
+}
+
+.correct.active {
+    background-color: green;
+}
